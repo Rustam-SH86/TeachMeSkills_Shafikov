@@ -9,10 +9,11 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Hello and welcome!");
         Random random = new Random();
-        int[] array = new int[5];
+        int[] array = new int[7];
+        int[] arr = new int[10];
 
         for (int i = 0;  i < array.length; i++) {
             array[i] = random.nextInt(15,50);
-        }System.out.println(Arrays.toString(array));
+        }System.out.println(Arrays.toString(array) + Arrays.toString(arr) );
     }
 }
