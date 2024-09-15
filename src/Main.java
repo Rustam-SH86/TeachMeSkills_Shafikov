@@ -1,19 +1,51 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
-        Random random = new Random();
-        int[] array = new int[7];
-        int[] arr = new int[10];
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0;  i < array.length; i++) {
-            array[i] = random.nextInt(15,50);
-        }System.out.println(Arrays.toString(array) + Arrays.toString(arr) );
+        System.out.println("Enter the initial amount for the first card:" );
+        double balance1 = getInitialBalance(scanner);
+        CreditCard card1 = new CreditCard("111-222", balance1);
+
+
+        System.out.println("Enter the initial amount for the second card:");
+        double balance2 = getInitialBalance(scanner);
+        CreditCard card2 = new CreditCard("222-333", balance2);
+
+        System.out.println("Enter the initial amount for the third card:");
+        double balance3 = getInitialBalance(scanner);
+        CreditCard card3 = new CreditCard("333-444", balance3);
+
+        System.out.println("Deposit first card: ");
+        card1.depositMoney(scanner.nextInt());
+
+        System.out.println("Deposit second card: ");
+        card2.depositMoney(scanner.nextInt());
+
+
+        System.out.println("withdraw third card: ");
+        card3.withdrawMoney(scanner.nextInt());
+
+
+        System.out.println("Current carts ballance: ");
+        card1.printInfo();
+        card2.printInfo();
+        card3.printInfo();
+
+    }
+    private static double getInitialBalance(Scanner scanner) {
+        double balance = -1;
+        while (balance < 0) {
+            System.out.print("Please enter a positive number: ");
+            balance = scanner.nextDouble();
+            if (balance < 0) {
+                System.out.println("balance cannot be less than 0 ");
+            }
+        }
+        return balance;
     }
 }
