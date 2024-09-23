@@ -13,10 +13,10 @@ public class MainPhone {
         firstPhone.receiveCall("Michael");
         System.out.println("phone number is: " + firstPhone.getNumber());
 
-        secondePhone.receiveCall("Alex", "456-789-1230");
+        secondePhone.receiveCall("Alex", "1230-1230");
         System.out.println("phone number is: " + secondePhone.getNumber());
 
-        thirdPhone.sendMessage("123", "321", "456");
+        thirdPhone.sendMessage("2-23-22", "3-21-21", "3-23-32");
 
 
 
