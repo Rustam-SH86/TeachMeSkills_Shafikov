@@ -1,7 +1,7 @@
 package Animals;
 
 abstract class Animal {
-    protected static int nextId = 1;
+    private static int nextId = 1;
     protected int id;
     protected String name;
     protected int age;
