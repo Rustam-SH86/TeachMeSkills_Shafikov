@@ -1,22 +1,22 @@
 package Animals;
 
-public class Parrot extends Animal{
-    private int flightHeight;
+public class Parrot extends Bird implements canFly{
     private String color;
 
-    public Parrot(String name, int age, int flightHeight, String color) {
-        super(name, age);
-        this.flightHeight = flightHeight;
+    public Parrot(String name, int age, int maxFlightHeight, String color) {
+        super(name, age, maxFlightHeight);
         this.color = color;
     }
 
     @Override
     public String getInfo() {
-        return "ParrotID: " + id + ", Name: " + name + ", Age: " + age + ", Flight Height: " + flightHeight + " meters, Feather Color: " + color;
+        return "ParrotID: " + id + ", Name: " + name + ", Age: " + age + ", Flight Height: " + getMaxFlightHeight() + " meters, Feather Color: " + color;
     }
 
+    @Override
     public void fly() {
-        System.out.println(name + " is flying at a height of " + flightHeight + " meters.");
+        System.out.println(name + " is flying at a height of " + getMaxFlightHeight() + " meters.");
+
     }
 
     @Override
