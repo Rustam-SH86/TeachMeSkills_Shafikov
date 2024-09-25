@@ -28,7 +28,5 @@ public class Authorization {
             return false;
         }
         return true;
-
-
     }
 }
