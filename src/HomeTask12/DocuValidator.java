@@ -10,8 +10,8 @@ public class DocuValidator {
         if (trimmedDocNum.length() != 15) {
             return "Введенный номер не валиден, длина должна быть 15 символов ";
         }
-        if (!trimmedDocNum.startsWith("docnum")) {
-            return "Введенный номер не валиден, должен начинаться с 'docnum' ";
+        if (!(trimmedDocNum.startsWith("docnum") || trimmedDocNum.startsWith("kontract")))  {
+            return "Введенный номер не валиден, должен начинаться с 'docnum' или 'kontract' ";
         }
         return "Этот номер валиден ";
     }
